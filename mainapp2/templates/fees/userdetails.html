@@ -1,0 +1,20 @@
+{% extends 'course/base.html' %}
+{% load static %}
+{% block title %}{{block.super}} | Profile Details Page{% endblock title %}
+{% block content %}
+
+<h1><center>Profile Details Page</center></h1>
+
+{{Profile}}
+{% comment %} <form action="" method="POST" novalidate >
+    {% csrf_token %}
+     <table>
+    {% for field in Info %}
+    {{field.label_tag}}{{field}}{{field.errors|striptags}}</br></br>
+    {% endfor %}
+    </table>
+    <input type="Submit" value="Save">   
+<form> {% endcomment %}
+<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'pass' %}">Change password</a>
+{% endblock content %}

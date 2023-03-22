@@ -1,0 +1,59 @@
+{% extends 'course/base.html' %}
+{% load static %}
+{% block title %}{{block.super}} | Profile Page{% endblock title %}
+{% block content %}
+
+<h1><center>Profile Page</center></h1>
+<p>Welcome</p>
+{% comment %} <style>
+    .success
+    {color:red;}
+</style>
+{% if messages %}
+{% for message in messages %}
+<strong>
+ {% if message.tags %}
+<p class="success">{{message}}</p>
+{% endif %}
+</strong>
+{% endfor %}
+{% endif %}
+{{Name}}<br> {% endcomment %}
+<b>{{User}}</b></br>
+
+{% if messages %}
+{% for message in messages %}
+<strong>
+ {% if message.tags %}
+{{message}}
+{% endif %}
+</strong>
+{% endfor %}
+{% endif %}
+
+<!--your page -->
+<!-- {% if info != None %}
+    <h3>All User Data</h3>
+    {% for  user in info %}
+        <a href="{% url 'userdetails' user.eid %}">{{user.username}}</a></br>
+    {% endfor %}
+{% endif %} -->
+<form action="" method="POST" novalidate >
+    {% csrf_token %}
+     <table>
+    {% for field in Profile %}
+    {{field.label_tag}}{{field}}{{field.errors|striptags}}</br></br>
+    {% endfor %}
+    </table>
+    <input type="Submit" value="Save">   
+<form>
+<a href="{% url 'dashboard' %}">Dashboard</a>
+<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'pass' %}">Change password</a>
+{% endblock content %}
+
+
+
+
+
+

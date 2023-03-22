@@ -1,0 +1,46 @@
+{% extends 'course/base.html' %}
+{% load static %}
+{% block title %}{{block.super}} | Login Page{% endblock title %}
+{% block content %}
+<style>
+    .err{
+        color:red;
+    }
+</style>
+<h1><center>Login</center></h1>
+<form action="" method="POST" novalidate >
+{% csrf_token %}
+
+ <table>
+{% if Login.non_field_errors %}
+    {% for error in Login.non_field_errors  %}
+      <p class="err">{{error}}</p>
+    {% endfor %}
+  {% endif %} 
+
+{% for field in Login %}
+{{field.label_tag}}{{field}}{{field.errors|striptags}}</br></br>
+{% endfor %}
+</table>
+
+<input type="Submit" value="Submit">
+</form>
+{% if messages %}
+{% for message in messages %}
+<strong>
+ {% if message.tags %}
+{{message}}
+{% endif %}
+</strong>
+{% endfor %}
+{% endif %}
+<a href="{% url 'signup' %}">Sign Up</a>
+
+{% endblock content %}
+
+
+
+
+
+
+

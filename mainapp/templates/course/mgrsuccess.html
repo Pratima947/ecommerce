@@ -1,0 +1,9 @@
+{% extends 'course/base.html' %}
+{% load static %}
+{% block title %} {{block.super}} |ManagerInfo{% endblock title %}
+{% block content %}
+<h1><center>Manager Information</center></h1>
+  Name:{{Name}}</br>
+  email:{{Email}}</br>
+  Sallary:{{Sallary}}
+{% endblock content %}

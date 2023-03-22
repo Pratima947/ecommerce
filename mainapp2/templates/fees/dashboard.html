@@ -1,0 +1,19 @@
+{% extends 'course/base.html' %}
+{% load static %}
+{% block title %}{{block.super}} | Dashboard Page{% endblock title %}
+{% block content %}
+
+<h1><center>Dashboard Page</center></h1>
+{{User}}
+{% if perms.mainapp2.delete_blog %}
+<input type="button" value="Delete"></br>
+{% endif %}  
+<a href="{% url 'profile' %}">profile</a>  
+<a href="{% url 'logout' %}">Logout</a>
+{% endblock content %}
+
+
+
+
+
+

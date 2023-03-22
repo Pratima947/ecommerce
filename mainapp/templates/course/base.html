@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>{% block title %}Bigit{% endblock title  %}</title>
+<body>
+   <nav>
+      <ul>
+      <li><a href="{% url 'python' %}">Home</a></li>
+      <li><a href="{% url 'django' %}">about</a></li>
+      <li><a href="/learndj/">contact</a></li>
+      <li><a href="/learndj/">profile</a></li>
+      </ul>
+  </nav>
+  {% block content %}{% endblock content %}
+</body>
+</html>

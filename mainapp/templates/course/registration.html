@@ -1,0 +1,25 @@
+{% extends 'course/base.html' %}
+{% load static %}
+{% block title %}{{block.super}}Registration{% endblock title %}
+{% block content %}
+
+<h1><center>Registration</center></h1>
+<form method="POST" nonvalidate >
+{% csrf_token %}
+{% for form in Form %}
+<table>
+{{form.label_tag}}
+{{form}}
+</table>
+{% endfor %}
+
+<input type="Submit" value="Submit">
+</form>
+{% endblock content %}
+
+
+
+
+
+
+

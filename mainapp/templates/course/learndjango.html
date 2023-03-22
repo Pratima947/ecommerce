@@ -1,0 +1,17 @@
+{% extends 'course/base.html' %}
+{% load static %}
+ {% block title %} {{block.super}} |Learn Django{% endblock title %}
+  {% block content %}
+  
+Learn Django :{{dj}} </br>
+   length Learn Django :{{dj | length}}</br>
+   length Learn Django :{{dj | lower}}</br>
+   length Learn Django :{{dj | truncatewords:1}}</br>
+   {% if trueData %}
+       length Learn Django :{{dj | upper | truncatewords:1}}</br>
+   {% else %}
+        I am not Django language  afortable
+   {% endif %}
+
+{% endblock content %}
+

@@ -1,0 +1,12 @@
+{% extends 'course/base.html' %}
+{% load static %}
+{% block title %}{{block.super}} | Get Cookie Page{% endblock title %}
+{% block content %}
+
+<h1><center>Get Cookie Page</center></h1>
+<p>Welcome Get Cookie Page</p>
+{{Name}}
+<a href="{% url 'dashboard' %}">Dashboard</a>
+<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'pass' %}">Change password</a>
+{% endblock content %}
